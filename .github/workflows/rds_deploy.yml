@@ -3,9 +3,10 @@
 name: RDS Deployment
 
 on:
-   push:
-      paths:
-        - 'RDS/*'
+  workflow_run:
+    workflows: ["VPC Deployment"]
+    types:
+      - completed
 
   
   # Allows you to run this workflow manually from the Actions tab
