@@ -2,7 +2,7 @@ data "terraform_remote_state" "main" {
  backend = "s3"
  config = {
      bucket = "Ygithub-actions-backend-grigorinegru"
-     key = "path/to/my/vpc"
+     key = "path/to/my/asg"
      region = "us-east-1"
  }
 }
