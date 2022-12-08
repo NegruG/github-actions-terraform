@@ -14,5 +14,6 @@ module "vpc" {
   tags = {
     Terraform = "true"
     Environment = "dev"
+    Owned_by    = "Devops"
   }
 }
