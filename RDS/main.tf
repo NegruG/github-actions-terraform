@@ -1,5 +1,3 @@
-
-
 resource "aws_db_subnet_group" "db" {
  name = "db"
  subnet_ids = data.terraform_remote_state.main.outputs.private_subnets
@@ -7,6 +5,7 @@ resource "aws_db_subnet_group" "db" {
 
 resource "aws_security_group" "db" {
  name = "db"
+ vpc_id = data.terraform_remote_state.main.outputs.vpc_id
  description = "Allow Mysql traffic"
  ingress {
   description = "Allow mysql"
