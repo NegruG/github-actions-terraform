@@ -1,6 +1,6 @@
-env:
-  action: destroy
-  region: us-east-1
+# env:
+#   action: "destroy"
+#   region: "us-east-1"
 
 name: ASG Deployment
 
@@ -23,7 +23,7 @@ jobs:
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      AWS_DEFAULT_REGION: ${{ env.region }}
+      AWS_DEFAULT_REGION: "us-east-1"
       AWS_DEFAULT_OUTPUT: json
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -46,7 +46,7 @@ jobs:
       - name: Apply
         working-directory: ASG
         run: |
-          terraform ${{ env.action }} -auto-approve
+          terraform destroy -auto-approve
 
 
 
