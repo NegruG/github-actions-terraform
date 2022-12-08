@@ -17,3 +17,14 @@ module "vpc" {
     Owned_by    = "Devops"
   }
 }
+
+output vpc_id {
+  module.vpc.vpc_id
+}
+
+output private_subnets {
+  module.vpc.vpc_id
+}
+output public_subnets {
+  module.vpc.vpc_id
+}
