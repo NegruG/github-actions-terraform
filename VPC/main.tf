@@ -15,5 +15,6 @@ module "vpc" {
     Terraform = "true"
     Environment = "dev"
     Owned_by    = "Devops"
+    Dept       = "IT"
   }
 }
